@@ -1,0 +1,6 @@
+2025/07/22-19:10:47.692 13d4 Reusing MANIFEST C:\Users\User\Desktop\project\back\Profile\Default\Local Storage\leveldb/MANIFEST-000001
+2025/07/22-19:10:47.696 13d4 Recovering log #54
+2025/07/22-19:10:47.697 13d4 Reusing old log C:\Users\User\Desktop\project\back\Profile\Default\Local Storage\leveldb/000054.log 
+2025/07/22-19:11:00.346 3ff8 Level-0 table #58: started
+2025/07/22-19:11:00.351 3ff8 Level-0 table #58: 21710 bytes OK
+2025/07/22-19:11:00.354 3ff8 Delete type=0 #54

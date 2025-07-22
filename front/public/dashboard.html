@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exoad WB Analytics - Полная аналитика</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0f172a;
+            color: white;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 40px 0;
+            background: linear-gradient(135deg, #1e293b, #334155);
+            border-radius: 12px;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #3b82f6, #06b6d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .header p {
+            color: #94a3b8;
+            font-size: 1.1rem;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+        
+        .feature-card {
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 12px;
+            padding: 24px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.15);
+        }
+        
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 16px;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            color: white;
+        }
+        
+        .feature-card p {
+            color: #94a3b8;
+            margin-bottom: 16px;
+        }
+        
+        .feature-list {
+            list-style: none;
+        }
+        
+        .feature-list li {
+            color: #cbd5e1;
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .feature-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: bold;
+        }
+        
+        .cta-section {
+            text-align: center;
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .cta-section h2 {
+            font-size: 2rem;
+            margin-bottom: 16px;
+            color: white;
+        }
+        
+        .cta-section p {
+            color: #94a3b8;
+            font-size: 1.1rem;
+            margin-bottom: 24px;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            color: white;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 1px solid #334155;
+            color: #94a3b8;
+        }
+        
+        .btn-outline:hover {
+            border-color: #64748b;
+            color: white;
+            box-shadow: 0 4px 12px rgba(100, 116, 139, 0.2);
+        }
+        
+        .api-setup {
+            background: #fbbf24;
+            color: #92400e;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 24px;
+        }
+        
+        .api-setup strong {
+            display: block;
+            margin-bottom: 8px;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 40px 0;
+            border-top: 1px solid #334155;
+            color: #64748b;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 Exoad WB Analytics</h1>
+            <p>Профессиональная аналитика для продавцов Wildberries</p>
+        </div>
+        
+        <div id="api-warning" class="api-setup" style="display: none;">
+            <strong>⚠️ Настройка API ключа</strong>
+            Для получения реальных данных аналитики необходимо настроить API ключ Wildberries в настройках расширения.
+        </div>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">📈</div>
+                <h3>Анализ позиций</h3>
+                <p>Отслеживайте позиции ваших товаров в поиске и категориях</p>
+                <ul class="feature-list">
+                    <li>Мониторинг позиций в реальном времени</li>
+                    <li>История изменений позиций</li>
+                    <li>Сравнение с конкурентами</li>
+                    <li>Прогнозирование трендов</li>
+                </ul>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">💰</div>
+                <h3>Ценовая аналитика</h3>
+                <p>Анализируйте ценовую политику и оптимизируйте прибыль</p>
+                <ul class="feature-list">
+                    <li>Сравнение цен с конкурентами</li>
+                    <li>Рекомендации по ценообразованию</li>
+                    <li>Анализ эластичности спроса</li>
+                    <li>Отслеживание скидок и акций</li>
+                </ul>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3>Рекламная аналитика</h3>
+                <p>Оптимизируйте рекламные кампании для максимальной эффективности</p>
+                <ul class="feature-list">
+                    <li>Анализ эффективности кампаний</li>
+                    <li>Оптимизация ставок и бюджетов</li>
+                    <li>Подбор ключевых слов</li>
+                    <li>ROI и ROAS аналитика</li>
+                </ul>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">📦</div>
+                <h3>Складская логистика</h3>
+                <p>Контролируйте остатки и оптимизируйте поставки</p>
+                <ul class="feature-list">
+                    <li>Мониторинг остатков на складах</li>
+                    <li>Прогнозирование потребности</li>
+                    <li>Анализ оборачиваемости</li>
+                    <li>Оптимизация логистики</li>
+                </ul>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🔍</div>
+                <h3>Поисковая оптимизация</h3>
+                <p>Улучшайте видимость товаров в поиске Wildberries</p>
+                <ul class="feature-list">
+                    <li>Анализ ключевых слов</li>
+                    <li>Оптимизация карточек товаров</li>
+                    <li>Семантическое ядро</li>
+                    <li>A/B тестирование описаний</li>
+                </ul>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Отчеты и экспорт</h3>
+                <p>Создавайте детальные отчеты и экспортируйте данные</p>
+                <ul class="feature-list">
+                    <li>Автоматические отчеты</li>
+                    <li>Экспорт в Excel/CSV</li>
+                    <li>Интеграция с CRM</li>
+                    <li>API для разработчиков</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="cta-section">
+            <h2>Начните использовать прямо сейчас</h2>
+            <p>Расширение уже установлено и готово к работе. Откройте любую страницу товара на Wildberries и начните анализ.</p>
+            <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 24px;">
+                <button onclick="openWildberries()" class="btn">
+                    🛒 Открыть Wildberries
+                </button>
+                <button onclick="setupApiKey()" class="btn btn-outline">
+                    🔑 Настроить API
+                </button>
+                <button onclick="showHelp()" class="btn btn-outline">
+                    ❓ Справка
+                </button>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>&copy; 2024 Exoad. Все права защищены.</p>
+            <p>Расширение для аналитики Wildberries</p>
+        </div>
+    </div>
+    
+    <script>
+        // Check if API key is configured
+        chrome.storage.sync.get(['wbApiKey']).then(result => {
+            if (!result.wbApiKey) {
+                document.getElementById('api-warning').style.display = 'block'
+            }
+        })
+        
+        function openWildberries() {
+            chrome.tabs.create({
+                url: 'https://wildberries.ru'
+            })
+        }
+        
+        function setupApiKey() {
+            const apiKey = prompt('Введите ваш API ключ Wildberries:')
+            if (apiKey) {
+                chrome.storage.sync.set({ wbApiKey: apiKey }).then(() => {
+                    alert('API ключ сохранен!')
+                    document.getElementById('api-warning').style.display = 'none'
+                })
+            }
+        }
+        
+        function showHelp() {
+            alert(`Как использовать расширение:
+
+1. Откройте страницу товара на Wildberries
+2. Нажмите на кнопку "📊 Аналитика Exoad" в правом верхнем углу
+3. Изучите данные о позициях, ценах и конкурентах
+4. Экспортируйте данные для дальнейшего анализа
+
+Для получения реальных данных настройте API ключ в личном кабинете Wildberries.`)
+        }
+    </script>
+</body>
+</html>

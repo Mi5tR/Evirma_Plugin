@@ -1,0 +1,47 @@
+{
+   "action": {
+      "default_icon": {
+         "16": "icon-16.png",
+         "32": "icon-32.png"
+      },
+      "default_popup": "entry-points/popup/index.html"
+   },
+   "background": {
+      "service_worker": "service-worker-loader.js",
+      "type": "module"
+   },
+   "content_scripts": [ {
+      "css": [ "assets/YVYBukW6.css" ],
+      "js": [ "assets/rXzVu89c.js" ],
+      "matches": [ "https://*.wildberries.ru/*", "https://*.wb.ru/*", "https://wildberries.ru/*" ],
+      "run_at": "document_start",
+      "world": "MAIN"
+   }, {
+      "css": [ "assets/YVYBukW6.css", "assets/bg1-Z4sW.css", "assets/BZwA5qRF.css", "assets/DO5XjZqr.css" ],
+      "js": [ "assets/dqmFGSjO.js" ],
+      "matches": [ "https://*.wildberries.ru/*", "https://*.wb.ru/*", "https://wildberries.ru/*" ],
+      "run_at": "document_start"
+   } ],
+   "description": "Бесплатный плагин для аналитики и управлению рекламой на сайте Wildberries",
+   "host_permissions": [ "https://*.evirma.ru/*", "https://www.wildberries.ru/*", "https://wildberries.ru/*", "https://www.seller.wildberries.ru/*", "https://seller.wildberries.ru/*", "https://www.cmp.wildberries.ru/*", "https://cmp.wildberries.ru/*" ],
+   "icons": {
+      "128": "icon-128.png",
+      "16": "icon-16.png",
+      "32": "icon-32.png",
+      "48": "icon-64.png",
+      "64": "icon-64.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEApiRMnu2ZN7pnD2QPHjNCiUjzxAdJqmRhRZZI4Wdtp24KMIf8mpWewyr+Jbl7VxkgYaUo6+Bwcgre48wq9aL+HleX0vKv8l/vDE3QcAtt7rvKbT3KJ7rgfCj0m/zpGkrZErQ0QDtwqq9J2alf389dygCuFz3OI/Jhimnv1K9Jn6UxH3vL5f2vydpjbKZFPHZCkIlQuwsDq9Zx7aPFJAJd0K3Zz7f+gl98utFVhFqxEpv50TfVCZT0OiKtcxjQpjcLdpOkjYZbBBmfjdFT0DSB9FY10bJh1z8llX15WbC482SnmyfwUMsWwdwyJSaZhiLDcq9adI3QnbtyhrWbyK/WbQIDAQAB",
+   "manifest_version": 3,
+   "name": "EVIRMA 2 — экспертная аналитика продвижения и рекламы на Wildberries",
+   "optional_host_permissions": [ "http://*/*", "https://*/*" ],
+   "permissions": [ "activeTab", "storage", "unlimitedStorage" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "2.6.6",
+   "version_name": "2.6.6",
+   "web_accessible_resources": [ {
+      "matches": [ "https://*.wb.ru/*", "https://*.wildberries.ru/*", "https://wildberries.ru/*" ],
+      "resources": [ "js/DE3akDVi.js", "js/FSs5A10t.js", "js/DSGbj4hz.js", "js/CwuAAFsv.js", "js/DztEdZpe.js", "js/nv_3-_ip.js", "assets/BZnckhyM.svg", "assets/CTS6Ib1x.svg", "assets/BxiqB3_2.svg", "assets/TvZAupZj.svg", "assets/Ce63qpW2.svg", "assets/zWDlfn6S.svg", "assets/7FBH0Nb8.svg", "assets/D66H9HNw.svg", "assets/DRQEzoY3.svg", "assets/4K_2-Bv0.svg", "assets/NwSkzJDK.svg", "assets/BpWzdziP.svg", "assets/Bj_WqPvS.svg", "assets/BYWxO7xj.svg", "assets/yrYgQg16.svg", "assets/CRZcC-U9.svg", "assets/5kL4cOLQ.svg", "assets/BxII98ni.svg", "assets/CjonbdtG.svg", "assets/CrqH6tFI.svg", "assets/xsPnRGeS.svg", "assets/Ct4Z4mUb.svg", "assets/tlb2jmBt.svg", "assets/B6rlSI1P.svg", "assets/K2ieZb4c.svg", "assets/D2aLExVv.svg", "assets/C5zIK607.svg", "assets/DRRMK3QE.svg", "assets/Ydo05yAD.svg", "assets/BEi2J9H1.svg", "assets/kEkHvZcR.svg", "assets/B2t5fsd_.svg", "assets/BqxhNCFl.svg", "assets/BTaMxM_I.svg", "assets/BAYBEEUA.svg", "assets/B9IfpitD.svg", "assets/BUN1lErP.png", "assets/YRx4n-RL.png", "assets/TPIDh2g0.webp", "assets/C95gnN93.webp", "assets/DcVkk224.webp", "assets/ByoOIsZg.webp", "assets/DFcdl7jw.png", "assets/B6cZQOO3.webp", "assets/Bk05T288.webp", "assets/rtVEMJHF.webp", "assets/akN4SCnl.webp", "assets/Ms5gQyEv.png", "assets/DGyU1Tir.png", "assets/C7M0MaSK.webp", "assets/DMe1lnPR.webp", "assets/CNlWiaEh.png", "assets/BaSDdwae.png", "assets/Bt9wdfL1.png", "assets/_FvPOxBv.png", "assets/B5CqHqjA.png", "js/D8j6JjnZ.js", "js/BlUKqefZ.js", "js/BdjLkPll.js", "js/BsPQu0W_.js", "js/DetAIFwH.js", "js/CzfjByzk.js", "js/49OujIyA.js", "js/C--LeXQ3.js", "js/CQx-Q2Z_.js", "js/BjwNwwC7.js" ],
+      "use_dynamic_url": false
+   } ]
+}

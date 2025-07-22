@@ -1,0 +1,30 @@
+<svg viewBox="0 0 24 24" width="1em" height="1em" xmlns="http://www.w3.org/2000/svg">
+    <polygon points="13.5 0.5 0.5 3 0.5 21 13.5 23.5 13.5 0.5"
+             style="fill: none; stroke: currentcolor; stroke-linecap: round; stroke-linejoin: round;"/>
+    <polyline points="13.5 3.5 23.5 3.5 23.5 20.5 13.5 20.5"
+              style="fill: none; stroke: currentcolor; stroke-linecap: round; stroke-linejoin: round;"/>
+    <rect height="1" width="3" x="13.5" y="5.5"
+          style="fill: none; stroke: currentcolor; stroke-linecap: round; stroke-linejoin: round;"/>
+    <rect height="1" width="3" x="18.5" y="5.5"
+          style="fill: none; stroke: currentcolor; stroke-linecap: round; stroke-linejoin: round;"/>
+    <rect height="1" width="3" x="13.5" y="8.5"
+          style="fill: none; stroke: currentcolor; stroke-linecap: round; stroke-linejoin: round;"/>
+    <rect height="1" width="3" x="18.5" y="8.5"
+          style="fill: none; stroke: currentcolor; stroke-linecap: round; stroke-linejoin: round;"/>
+    <rect height="1" width="3" x="13.5" y="11.5"
+          style="fill: none; stroke: currentcolor; stroke-linecap: round; stroke-linejoin: round;"/>
+    <rect height="1" width="3" x="18.5" y="11.5"
+          style="fill: none; stroke: currentcolor; stroke-linecap: round; stroke-linejoin: round;"/>
+    <rect height="1" width="3" x="13.5" y="14.5"
+          style="fill: none; stroke: currentcolor; stroke-linecap: round; stroke-linejoin: round;"/>
+    <rect height="1" width="3" x="18.5" y="14.5"
+          style="fill: none; stroke: currentcolor; stroke-linecap: round; stroke-linejoin: round;"/>
+    <rect height="1" width="3" x="13.5" y="17.5"
+          style="fill: none; stroke: currentcolor; stroke-linecap: round; stroke-linejoin: round;"/>
+    <rect height="1" width="3" x="18.5" y="17.5"
+          style="fill: none; stroke: currentcolor; stroke-linecap: round; stroke-linejoin: round;"/>
+    <line x1="4.5" x2="8.5" y1="8.5" y2="16.5"
+          style="fill: none; stroke: currentcolor; stroke-linecap: round; stroke-linejoin: round;"/>
+    <line x1="4.5" x2="8.5" y1="16.5" y2="8.5"
+          style="fill: none; stroke: currentcolor; stroke-linecap: round; stroke-linejoin: round;"/>
+</svg>

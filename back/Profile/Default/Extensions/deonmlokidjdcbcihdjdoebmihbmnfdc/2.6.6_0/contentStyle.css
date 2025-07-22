@@ -1,0 +1,136 @@
+:root {
+    @font-face {
+        font-display: swap;
+        font-family: WB Hauss VF;
+        font-weight: 1 850;
+        src: url(https://static-basket-02.wbbasket.ru/vol20/portal-fonts/latest/assets/als-hauss-vf.b709e7bab16d4dd7d164.ttf) format("truetype-variations")
+    }
+
+    @font-face {
+        font-display: swap;
+        font-family: WB Hauss;
+        font-style: normal;
+        font-weight: 1;
+        src: url(https://static-basket-02.wbbasket.ru/vol20/portal-fonts/latest/assets/hauss-hairline.8647c2746e374e22d86d.woff2) format("woff2")
+    }
+
+    @font-face {
+        font-display: swap;
+        font-family: WB Hauss;
+        font-style: italic;
+        font-weight: 1;
+        src: url(https://static-basket-02.wbbasket.ru/vol20/portal-fonts/latest/assets/hauss-hairline-italic.0101383b9b2d838885a2.woff2) format("woff2")
+    }
+
+    @font-face {
+        font-display: swap;
+        font-family: WB Hauss;
+        font-style: normal;
+        font-weight: 100;
+        src: url(https://static-basket-02.wbbasket.ru/vol20/portal-fonts/latest/assets/hauss-thin.186e3df1a3fd7c9da049.woff2) format("woff2")
+    }
+
+    @font-face {
+        font-display: swap;
+        font-family: WB Hauss;
+        font-style: italic;
+        font-weight: 100;
+        src: url(https://static-basket-02.wbbasket.ru/vol20/portal-fonts/latest/assets/hauss-thin-italic.4d29c800d08cab0a14ef.woff2) format("woff2")
+    }
+
+    @font-face {
+        font-display: swap;
+        font-family: WB Hauss;
+        font-style: normal;
+        font-weight: 200;
+        src: url(https://static-basket-02.wbbasket.ru/vol20/portal-fonts/latest/assets/hauss-light.0bc7ad383f520c537000.woff2) format("woff2")
+    }
+
+    @font-face {
+        font-display: swap;
+        font-family: WB Hauss;
+        font-style: italic;
+        font-weight: 200;
+        src: url(https://static-basket-02.wbbasket.ru/vol20/portal-fonts/latest/assets/hauss-light-italic.2ad946ca38bfec244789.woff2) format("woff2")
+    }
+
+    @font-face {
+        font-display: swap;
+        font-family: WB Hauss;
+        font-style: normal;
+        font-weight: 300;
+        src: url(https://static-basket-02.wbbasket.ru/vol20/portal-fonts/latest/assets/hauss-book.a223cb788bd7980a5410.woff2) format("woff2")
+    }
+
+    @font-face {
+        font-display: swap;
+        font-family: WB Hauss;
+        font-style: italic;
+        font-weight: 300;
+        src: url(https://static-basket-02.wbbasket.ru/vol20/portal-fonts/latest/assets/hauss-book-italic.0f9bd1ae96e6f8b0c5ba.woff2) format("woff2")
+    }
+
+    @font-face {
+        font-display: swap;
+        font-family: WB Hauss;
+        font-style: normal;
+        font-weight: 400;
+        src: url(https://static-basket-02.wbbasket.ru/vol20/portal-fonts/latest/assets/hauss-regular.e0b0d410abe3ff1c9dd6.woff2) format("woff2")
+    }
+
+    @font-face {
+        font-display: swap;
+        font-family: WB Hauss;
+        font-style: italic;
+        font-weight: 400;
+        src: url(https://static-basket-02.wbbasket.ru/vol20/portal-fonts/latest/assets/hauss-regular-italic.4d98e1e42425d220da92.woff2) format("woff2")
+    }
+
+    @font-face {
+        font-display: swap;
+        font-family: WB Hauss;
+        font-style: normal;
+        font-weight: 500;
+        src: url(https://static-basket-02.wbbasket.ru/vol20/portal-fonts/latest/assets/hauss-medium.f7fb80e5b276629c94fb.woff2) format("woff2")
+    }
+
+    @font-face {
+        font-display: swap;
+        font-family: WB Hauss;
+        font-style: italic;
+        font-weight: 500;
+        src: url(https://static-basket-02.wbbasket.ru/vol20/portal-fonts/latest/assets/hauss-medium-italic.cd9a6f3453d183207d39.woff2) format("woff2")
+    }
+
+    @font-face {
+        font-display: swap;
+        font-family: WB Hauss;
+        font-style: normal;
+        font-weight: 700;
+        src: url(https://static-basket-02.wbbasket.ru/vol20/portal-fonts/latest/assets/hauss-bold.f801d610414238176151.woff2) format("woff2")
+    }
+
+    @font-face {
+        font-display: swap;
+        font-family: WB Hauss;
+        font-style: italic;
+        font-weight: 700;
+        src: url(https://static-basket-02.wbbasket.ru/vol20/portal-fonts/latest/assets/hauss-bold-italic.f0150bb362e32a4bc8aa.woff2) format("woff2")
+    }
+
+    @font-face {
+        font-display: swap;
+        font-family: WB Hauss;
+        font-style: normal;
+        font-weight: 800;
+        src: url(https://static-basket-02.wbbasket.ru/vol20/portal-fonts/latest/assets/hauss-black.74f97b9157442e6b030e.woff2) format("woff2")
+    }
+
+    @font-face {
+        font-display: swap;
+        font-family: WB Hauss;
+        font-style: italic;
+        font-weight: 800;
+        src: url(https://static-basket-02.wbbasket.ru/vol20/portal-fonts/latest/assets/hauss-black-italic.1da75ae84037a59e24dc.woff2) format("woff2")
+    }
+}
