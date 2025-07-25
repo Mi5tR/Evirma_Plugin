@@ -1,7 +1,4 @@
-"use client"
-
 import fetch from 'node-fetch';
-import { useState } from "react"
 import { Sidebar } from "./components/sidebar"
 import { DashboardCard } from "./components/dashboard-card"
 import { StatsCard } from "./components/stats-card"
@@ -11,6 +8,7 @@ import { ChartPlaceholder } from "./components/chart-placeholder"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Search, Bell, User, MoreHorizontal } from "lucide-react"
+import { useEffect, useState } from 'react';
 
 interface Ad {
     article: number;
@@ -26,34 +24,80 @@ interface Ad {
     image: string | null;
 }
 
-async function fetchAds(): Promise<Ad[]> {
+async function fetchAds(keyword: string): Promise<Ad[]> {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 10000); // Таймаут 10 секунд
+
     try {
-        const response = await fetch('http://127.0.0.1:8000/ad?keyword=компьютер');
-        
+        const response = await fetch('http://127.0.0.1:8000/ad', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ keyword }),
+            signal: controller.signal,
+        });
+
         if (!response.ok) {
-            throw new Error('Ошибка сети или сервера');
+            throw new Error(`Ошибка HTTP! Статус: ${response.status}`);
         }
-        
-        const data = (await response.json()) as Ad[];
+
+        const data = await response.json() as Ad[];
         return data;
     } catch (error) {
-        console.error('Ошибка при выполнении запроса:', error);
-        throw error; 
+        console.error('Ошибка при получении данных:', error);
+        throw error;
+    } finally {
+        clearTimeout(timeout);
     }
 }
 
-(async () => {
-    try {
-        const ads = await fetchAds();
-        console.log('Полученные данные:', ads);
-        
-        if (ads.length > 0) {
-            console.log('Первый элемент:', ads[0]);
+// AdssComponent removed to avoid duplicate default export.
+// If you need to use AdssComponent, export it as a named export instead:
+
+export function AdsComponent() {
+    const [ads, setAds] = useState<Ad[]>([]);
+    const [error, setError] = useState<string | null>(null);
+    const [loading, setLoading] = useState<boolean>(false);
+
+    const loadAds = async (keyword: string) => {
+        setLoading(true);
+        try {
+            const data = await fetchAds(keyword);
+            setAds(data);
+            setError(null);
+        } catch (err) {
+            setError(err instanceof Error ? err.message : 'Неизвестная ошибка');
+            setAds([]);
+        } finally {
+            setLoading(false);
         }
-    } catch (error) {
-        console.error('Ошибка в процессе работы:', error);
-    }
-})();
+    };
+
+    useEffect(() => {
+        loadAds('компьютер'); // Тестовое ключевое слово
+    }, []);
+
+    if (loading) return <div>Загрузка...</div>;
+    if (error) return <div>Ошибка: {error}</div>;
+
+    return (
+        <div>
+            <h1>Объявления</h1>
+            {ads.length === 0 ? (
+                <p>Нет данных для отображения</p>
+            ) : (
+                <ul>
+                    {ads.map(ad => (
+                        <li key={ad.id}>
+                            {ad.name} - {ad.brand || 'Без бренда'} (CPM: {ad.cpm} ₽)
+                        </li>
+                    ))}
+                </ul>
+            )}
+        </div>
+    );
+}
 
 const mockProducts = [
   {
