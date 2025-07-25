@@ -68,5 +68,3 @@ def read_root(request: keyword_Request):
 
 if __name__ == "__main__":
     uvicorn.run("get_data:app", host="127.0.0.1", port=8000, reload=True)
-
-    
